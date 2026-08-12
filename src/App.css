@@ -1,212 +1,270 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+/* ==========================================================================
+   App Layout & Modern Job Portal Components (App.css)
+   ========================================================================== */
 
-:root {
-  --primary-gradient: linear-gradient(135deg, #a855f7 0%, #ec4899 50%, #3b82f6 100%);
-  --card-bg: rgba(30, 41, 59, 0.65);
-  --card-border: rgba(255, 255, 255, 0.12);
-  --text-main: #f8fafc;
-  --text-sub: #94a3b8;
-  --accent-glow: rgba(168, 85, 247, 0.35);
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-  background-color: #090d16;
-  color: var(--text-main);
-  line-height: 1.6;
-}
-
-/* Main Container with Gradient Mesh Background */
-.main_div {
+.app_container {
   min-height: 100vh;
-  background: 
-    radial-gradient(circle at 15% 15%, rgba(168, 85, 247, 0.18) 0%, transparent 40%),
-    radial-gradient(circle at 85% 80%, rgba(59, 130, 246, 0.18) 0%, transparent 40%),
-    linear-gradient(135deg, #090d16 0%, #111827 50%, #1e1035 100%);
-  padding: 40px 24px;
   display: flex;
   flex-direction: column;
+  background-color: var(--bg-app);
+  color: var(--text-main);
+  transition: all var(--transition-normal);
+}
+
+/* --------------------------------------------------------------------------
+   1. Header Navigation Bar
+   -------------------------------------------------------------------------- */
+*{
+background-color: black;
+}
+
+.brand_logo {
+  display: flex;
   align-items: center;
-  gap: 40px;
-}
-
-/* Header Styling */
-.app_header {
-  text-align: center;
-  max-width: 800px;
-  margin-top: 20px;
-}
-
-.main_title {
-  font-size: 2.75rem;
+  gap: 10px;
+  font-size: 20px;
   font-weight: 800;
-  background: var(--primary-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 12px;
-  letter-spacing: -0.02em;
-  text-shadow: 0 10px 30px rgba(168, 85, 247, 0.2);
-}
-
-.main_subtitle {
-  font-size: 1.15rem;
-  color: var(--text-sub);
-  font-weight: 400;
-}
-
-/* Section Containers */
-.section_container {
-  width: 100%;
-  max-width: 1100px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.section_heading {
-  font-size: 1.35rem;
-  font-weight: 700;
-  color: #e2e8f0;
-  letter-spacing: -0.01em;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.section_heading::before {
-  content: '';
-  display: inline-block;
-  width: 4px;
-  height: 20px;
-  background: var(--primary-gradient);
-  border-radius: 4px;
-}
-
-/* Navbar Component Styles */
-.navbar_grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-}
-
-.navbar {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid var(--card-border);
-  padding: 12px 24px;
-  border-radius: 50px;
-  color: #f1f5f9;
-  font-weight: 600;
-  font-size: 0.95rem;
+  letter-spacing: -0.5px;
+  color: var(--text-main);
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-.nav_icon {
-  font-size: 1.1rem;
-}
-
-.navbar:hover {
-  background: linear-gradient(135deg, rgba(168, 85, 247, 0.25), rgba(236, 72, 153, 0.25));
-  border-color: rgba(236, 72, 153, 0.5);
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 10px 25px -5px var(--accent-glow);
+.brand_icon {
+  width: 38px;
+  height: 38px;
+  background: linear-gradient(135deg, var(--primary-500), var(--accent-purple));
   color: #ffffff;
-}
-
-/* Divcontain Component Styles */
-.divcontain_grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 20px;
-}
-
-.divcontain {
-  background: var(--card-bg);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid var(--card-border);
-  padding: 24px;
-  border-radius: 18px;
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
-  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
-}
-
-.divcontain::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 4px;
-  height: 100%;
-  background: var(--primary-gradient);
-  opacity: 0.8;
-  transition: width 0.3s ease;
-}
-
-.divcontain:hover::before {
-  width: 6px;
-  opacity: 1;
-}
-
-.divcontain:hover {
-  transform: translateY(-5px);
-  border-color: rgba(168, 85, 247, 0.4);
-  box-shadow: 0 20px 35px -10px rgba(168, 85, 247, 0.25);
-  background: rgba(30, 41, 59, 0.85);
-}
-
-.card_icon {
-  font-size: 1.6rem;
-  background: rgba(255, 255, 255, 0.08);
-  padding: 10px;
-  border-radius: 12px;
+  border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 20px;
+  box-shadow: var(--shadow-glow);
 }
 
-.card_content {
+.brand_title {
+  background: linear-gradient(135deg, var(--primary-600), var(--accent-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.header_actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.theme_toggle_btn {
+  background-color: var(--bg-input);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  padding: 8px 14px;
+  border-radius: var(--radius-full);
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all var(--transition-fast);
+}
+
+.theme_toggle_btn:hover {
+  border-color: var(--primary-500);
+  transform: translateY(-1px);
+}
+
+/* --------------------------------------------------------------------------
+   2. Job Grid Layout (.jobs_grid / .jobs_grid_container)
+   -------------------------------------------------------------------------- */
+.jobs_grid_container,
+.jobs_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+  padding: 32px;
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   3. CardEmpliment Component Styling (.parent / .card)
+   -------------------------------------------------------------------------- */
+.parent {
+  background-color:white;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 24px;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  justify-content: space-between;
+  transition: all var(--transition-normal);
+  animation: fadeIn 0.35s ease-out;
+  box-shadow: var(--shadow-sm);
+  width: 100%;
+  min-height: 260px;
 }
 
-.card_content h3 {
-  font-size: 1.1rem;
+.parent:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary-500);
+  box-shadow: var(--shadow-lg);
+}
+
+.parent .card {
+  display: flex;
+  background-color: white;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
+/* Top Section (.top / .logo) */
+.parent .top {
+  display: flex;
+   background-color: white;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+.parent .top .logo {
+  display: flex;
+   background-color: white;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.parent .top .logo img {
+  width: 52px;
+   background-color: white;
+  height: 52px;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+  border: 1px solid var(--border-color);
+  background-color: #ffffff;
+  box-shadow: var(--shadow-sm);
+}
+
+.parent .top .logo button,
+.parent .save-btn {
+   background-color: white;
+  background-color: var(--bg-input);
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+  border-radius: var(--radius-full);
+  padding: 6px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: capitalize;
+  transition: all var(--transition-fast);
+}
+
+.parent .top .logo button:hover,
+.parent .save-btn:hover {
+  border-color: var(--primary-500);
+  color: var(--primary-600);
+  background-color: var(--primary-50);
+}
+
+/* Center Section (.center) */
+.parent .center {
+   background-color: white;
+  margin: 14px 0 20px;
+  flex: 1;
+}
+
+.parent .center h2 {
+   background-color: white;
+  font-size: 13px;
   font-weight: 700;
-  color: #f8fafc;
+  color: var(--primary-600);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
 }
 
-.card_content p {
-  font-size: 0.92rem;
-  color: var(--text-sub);
-  line-height: 1.5;
+.parent .center h1 {
+   background-color: white;
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 12px;
+  line-height: 1.3;
+  transition: color var(--transition-fast);
 }
 
-/* Responsive adjustments */
-@media (max-width: 640px) {
-  .main_title {
-    font-size: 2rem;
-  }
-  .divcontain_grid {
+.parent:hover .center h1 {
+  color: var(--primary-600);
+}
+
+.parent .center span {
+   background-color: white;
+  display: inline-block;
+  padding: 5px 14px;
+  margin-right: 8px;
+  margin-top: 6px;
+  background-color: var(--bg-input);
+  color: var(--text-muted);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-full);
+  font-size: 12px;
+  font-weight: 600;
+  transition: all var(--transition-fast);
+}
+
+.parent .center span:hover {
+  border-color: var(--primary-500);
+  color: var(--primary-600);
+}
+
+/* Bottom Section (.bottom) */
+.parent .bottom {
+   background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 16px;
+  border-top: 1px dashed var(--border-color);
+  margin-top: auto;
+}
+
+.parent .bottom .price {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--text-main);
+   background-color: white;
+}
+
+.parent .bottom button {
+  background: linear-gradient(135deg, var(--primary-600), var(--accent-purple));
+  color: #0b0303;
+  box-shadow:10px 5px 10px black;
+  padding: 8px 24px;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  font-size: 13px;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.25);
+}
+
+.parent .bottom button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4);
+}
+
+/* --------------------------------------------------------------------------
+   4. Media Queries
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .jobs_grid_container,
+  .jobs_grid {
+    padding: 16px;
     grid-template-columns: 1fr;
   }
 }

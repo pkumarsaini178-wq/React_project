@@ -1,42 +1,68 @@
-import React from 'react'
-import Navbar from './components/navbar'
-import Divcontain from './components/Divcontain'
+import React, { useState } from 'react'
 import './App.css'
+import CardEmpliment from './components/CardEmpliment.jsx'
 
- const name="pankaj";
-   const midelname="kumar";
-   const sername="saini";
-export const App = () => {
+const App = () => {
+
+ const jobs = [
+  {
+    id: 1,
+    logo: "https://t4.ftcdn.net/jpg/05/72/62/45/240_F_572624568_dqkvrkUfRckNY2eMLC6JmgTctncWWMFF.jpg",
+    brandName: "AMAZON",
+    timing: "Part-Time",
+    position: "Senior UI/UX Designer",
+    level: "Senior Level",
+    pay: 120,
+    payType: "per hour"
+  },
+  {
+    id: 2,
+    logo: "https://t4.ftcdn.net/jpg/05/72/62/45/240_F_572624568_dqkvrkUfRckNY2eMLC6JmgTctncWWMFF.jpg",
+    brandName: "FLIPKART",
+    timing: "Full-Time",
+    position: "Senior UI/UX Designer",
+    level: "Senior Level",
+    pay: 120,
+    payType: "per hour"
+  },
+  {
+    id: 3,
+    logo: "https://t4.ftcdn.net/jpg/05/72/62/45/240_F_572624568_dqkvrkUfRckNY2eMLC6JmgTctncWWMFF.jpg",
+    brandName: "SHOPPY",
+    timing: "Part-Time",
+    position: "Senior UI/UX Designer",
+    level: "Senior Level",
+    pay: 120,
+    payType: "per hour"
+  },
+  {
+    id: 4,
+    logo: "https://t4.ftcdn.net/jpg/05/72/62/45/240_F_572624568_dqkvrkUfRckNY2eMLC6JmgTctncWWMFF.jpg",
+    brandName: "APPLE",
+    timing: "Full-Time",
+    position: "Junior UI/UX Designer",
+    level: "Junior Level",
+    pay: 100,
+    payType: "per hour"
+  },
+  {
+    id: 5,
+    logo: "https://t4.ftcdn.net/jpg/05/72/62/45/240_F_572624568_dqkvrkUfRckNY2eMLC6JmgTctncWWMFF.jpg",
+    brandName: "OTHER",
+    timing: "On Hour",
+    position: "Senior UI/UX Designer",
+    level: "Senior Level",
+    pay: 120,
+    payType: "per hour"
+  }
+];
   return (
-  
-    <div className='main_div'>
-      <header className='app_header'>
-        <h1 className='main_title'>Hello, this is my first React project! 🚀</h1>
-        <p className='main_subtitle'>Exploring modern UI design and components</p>
-      </header>
-
-      <section className='section_container'>
-        <h2 className='section_heading'>Navigation Items</h2>
-        <div className='navbar_grid'>
-          <Navbar user_name={name} Midel_name={midelname} serName={sername} />
-          <Navbar  /> 
-          <Navbar  />
-          <Navbar  />
-          <Navbar />
-          <Navbar  />
-        </div>
-      </section>
-
-      <section className='section_container'>
-        <h2 className='section_heading'>Content Containers</h2>
-        <div className='divcontain_grid'>
-          <Divcontain title="React Fundamentals" description="Learning JSX, components, and props passing." icon="⚡" />
-          <Divcontain title="State & Hooks" description="Managing local state with useState and useEffect." icon="🔄" />
-          <Divcontain title="Component Props" description="Passing data dynamically from parent to child components." icon="📦" />
-          <Divcontain title="Custom Styling" description="Building modern glassmorphism UI with CSS." icon="🎨" />
-        </div>
-      </section>
+    <div className="jobs_grid">
+      {jobs.map((job) => (
+        <CardEmpliment logo={job.logo} brandName={job.brandName} timing={job.timing} position={job.position} level={job.level} pay={job.pay} payType={job.payType} />
+      ))}
     </div>
   )
 }
+
 export default App
