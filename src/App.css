@@ -12,61 +12,39 @@
 }
 
 /* --------------------------------------------------------------------------
-   1. Header Navigation Bar
+   1. Navigation Bar Styling (nav & nav a)
    -------------------------------------------------------------------------- */
-*{
-background-color: black;
+.navbar_wrapper {
+  width: 100%;
 }
 
-.brand_logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 20px;
-  font-weight: 800;
-  letter-spacing: -0.5px;
-  color: var(--text-main);
-  cursor: pointer;
-}
-
-.brand_icon {
-  width: 38px;
-  height: 38px;
-  background: linear-gradient(135deg, var(--primary-500), var(--accent-purple));
-  color: #ffffff;
-  border-radius: var(--radius-md);
+nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 20px;
-  box-shadow: var(--shadow-glow);
+  gap: 32px;
+  background-color: #0f172a;
+  padding: 16px 32px;
+  border-bottom: 2px solid #1e293b;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-.brand_title {
-  background: linear-gradient(135deg, var(--primary-600), var(--accent-purple));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+nav a {
+  color: #94a3b8;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 8px 18px;
+  border-radius: 8px;
+  transition: all 0.25s ease;
 }
 
-.header_actions {
-  display: flex;
-  align-items: center;
-  gap: 16px;
+nav a:hover {
+  color: #ffffff;
+  background-color: #1e293b;
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
 }
 
-.theme_toggle_btn {
-  background-color: var(--bg-input);
-  border: 1px solid var(--border-color);
-  color: var(--text-main);
-  padding: 8px 14px;
-  border-radius: var(--radius-full);
-  font-size: 13px;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  transition: all var(--transition-fast);
-}
 
 .theme_toggle_btn:hover {
   border-color: var(--primary-500);
@@ -91,7 +69,7 @@ background-color: black;
    3. CardEmpliment Component Styling (.parent / .card)
    -------------------------------------------------------------------------- */
 .parent {
-  background-color:white;
+  background-color: white;
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
   padding: 24px;
@@ -122,7 +100,7 @@ background-color: black;
 /* Top Section (.top / .logo) */
 .parent .top {
   display: flex;
-   background-color: white;
+  background-color: white;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 16px;
@@ -131,7 +109,7 @@ background-color: black;
 
 .parent .top .logo {
   display: flex;
-   background-color: white;
+  background-color: white;
   align-items: center;
   justify-content: space-between;
   width: 100%;
@@ -139,7 +117,7 @@ background-color: black;
 
 .parent .top .logo img {
   width: 52px;
-   background-color: white;
+  background-color: white;
   height: 52px;
   border-radius: var(--radius-md);
   object-fit: cover;
@@ -150,7 +128,7 @@ background-color: black;
 
 .parent .top .logo button,
 .parent .save-btn {
-   background-color: white;
+  background-color: white;
   background-color: var(--bg-input);
   border: 1px solid var(--border-color);
   color: var(--text-muted);
@@ -172,13 +150,13 @@ background-color: black;
 
 /* Center Section (.center) */
 .parent .center {
-   background-color: white;
+  background-color: white;
   margin: 14px 0 20px;
   flex: 1;
 }
 
 .parent .center h2 {
-   background-color: white;
+  background-color: white;
   font-size: 13px;
   font-weight: 700;
   color: var(--primary-600);
@@ -188,7 +166,7 @@ background-color: black;
 }
 
 .parent .center h1 {
-   background-color: white;
+  background-color: white;
   font-size: 20px;
   font-weight: 800;
   color: var(--text-main);
@@ -202,7 +180,7 @@ background-color: black;
 }
 
 .parent .center span {
-   background-color: white;
+  background-color: white;
   display: inline-block;
   padding: 5px 14px;
   margin-right: 8px;
@@ -223,7 +201,7 @@ background-color: black;
 
 /* Bottom Section (.bottom) */
 .parent .bottom {
-   background-color: white;
+  background-color: white;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -236,13 +214,13 @@ background-color: black;
   font-size: 18px;
   font-weight: 800;
   color: var(--text-main);
-   background-color: white;
+  background-color: white;
 }
 
 .parent .bottom button {
   background: linear-gradient(135deg, var(--primary-600), var(--accent-purple));
   color: #0b0303;
-  box-shadow:10px 5px 10px black;
+  box-shadow: 10px 5px 10px black;
   padding: 8px 24px;
   border-radius: var(--radius-full);
   font-weight: 600;
@@ -262,6 +240,7 @@ background-color: black;
    4. Media Queries
    -------------------------------------------------------------------------- */
 @media (max-width: 768px) {
+
   .jobs_grid_container,
   .jobs_grid {
     padding: 16px;
