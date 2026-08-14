@@ -1,18 +1,22 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import './App.css'
-import Section2 from './components/TaiwindCss_prectiest_folder/Section2/Section2.jsx'
-import Section1 from './components/TaiwindCss_prectiest_folder/Section1/Section1.jsx'
-import Pagecontain1 from './components/TaiwindCss_prectiest_folder/Section1/Pagecontain1.jsx'
+import Daythree from './DayThree/daythree';
 
 const App = () => {
-return(
-  <>
-    <Section1 />
-   
-    <Section2 />
-    
-  </>
-)
+
+  const [a, seta] = useState(1);
+  const [data, setdata] = useState({ user_name: "pankaj_kumar_saini  ", age: 21, email: "pkumarsaini178@Gmail.com" })
+  function increasevalue() {
+    seta(a + 1);
+    console.log(a);
+  }
+  function dicresevalue() {
+    seta(a - 1);
+    console.log(a)
+  }
+  return (
+    <Daythree/>
+  )
 }
 
 export default App
