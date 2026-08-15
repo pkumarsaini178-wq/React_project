@@ -1,21 +1,15 @@
 import React, { useState, useRef } from 'react'
 import './App.css'
-import Daythree from './DayThree/daythree';
+import Demo_project_of_task_application from './fivthday/prectiesoftaskapplication/demo_project_of_task_application'
 
 const App = () => {
 
-  const [a, seta] = useState(1);
-  const [data, setdata] = useState({ user_name: "pankaj_kumar_saini  ", age: 21, email: "pkumarsaini178@Gmail.com" })
-  function increasevalue() {
-    seta(a + 1);
-    console.log(a);
-  }
-  function dicresevalue() {
-    seta(a - 1);
-    console.log(a)
-  }
+    
+    
   return (
-    <Daythree/>
+  <>
+ <Demo_project_of_task_application/>
+  </>
   )
 }
 
